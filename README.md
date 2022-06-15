@@ -29,3 +29,4 @@ python manage.py dumprequest
 ## TODO
 - Validate data from Kafka
 - Dispatch result somewhere to show it for end user
+- I heard [Faust](faust.readthedocs.io/en/latest/) provides some interestring features, will give a try later
