@@ -18,9 +18,9 @@ def payout_handler(data):
         data['content'],
     ))
     signature = sign_message(message)
-    resp = requests.post(settings.NIGHT_PAY_ENDPOINT, json={**data, 'signature': signature})
+    res = requests.post(settings.NIGHT_PAY_ENDPOINT, json={**data, 'signature': signature})
     # TODO: dispatch result somewhere to show result to the user
-    print(resp.content)
+    print(res.content)
 
 
 class Command(BaseCommand):
@@ -29,7 +29,7 @@ class Command(BaseCommand):
             settings.KAFKA_TOPIC_NAME,
             bootstrap_servers=[f"{settings.KAFKA_HOST}:{settings.KAFKA_POST}"],
         )
-        print("start listening on Kafka queue...")
+        print("start consuming payout request...")
         for message in consumer:
             deserialized_data = pickle.loads(message.value)
             # TODO: adding a serializer to validate fields and values

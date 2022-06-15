@@ -13,9 +13,9 @@ class Command(BaseCommand):
         dump_data = {
             "request_id": str(uuid.uuid4()),
             "partner_id": settings.HALONGPAY_PARTNER_ID,
-            "bank_no": "4",  # VIETCOMBANK
+            "bank_no": "4",                                 # VIETCOMBANK
             "account_no": "1023020330000",
-            "account_type": 0,  # Bank account number
+            "account_type": 0,                              # Bank account number
             "account_name": "NGUYEN VAN A",
             "amount": 1000000,
             "content": "blabla",
