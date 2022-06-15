@@ -1,4 +1,3 @@
-import uuid
 from django.core.management.base import BaseCommand
 from kafka import KafkaProducer
 from django.conf import settings
@@ -11,8 +10,6 @@ class Command(BaseCommand):
             bootstrap_servers=f"{settings.KAFKA_HOST}:{settings.KAFKA_POST}"
         )
         dump_data = {
-            "request_id": str(uuid.uuid4()),
-            "partner_id": settings.HALONGPAY_PARTNER_ID,
             "bank_no": "4",                                 # VIETCOMBANK
             "account_no": "1023020330000",
             "account_type": 0,                              # Bank account number
