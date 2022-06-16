@@ -21,6 +21,7 @@ python manage.py payoutpool
 ```
 
 ### Note
+You can setup a local Kafka using the docker-compose.yml file<br/><br/>
 You can make a dump request to Kafka using
 ```
 python manage.py dumprequest

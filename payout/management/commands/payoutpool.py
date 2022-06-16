@@ -8,7 +8,7 @@ import requests
 
 
 def payout_handler(data):
-    request_id = str(uuid.uuid4())
+    request_id = str(uuid.uuid4())  # FIXME: recommend from night-pay PartnerID + 9P + YYYYMMDD + UniqueId
     message = "|".join((
         request_id,
         settings.HALONGPAY_PARTNER_ID,
